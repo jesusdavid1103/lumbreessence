@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfumería Exclusiva | Fragancias de Lujo</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+      color: #2d2d2d;
+      padding: 60px 0 40px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.3em;
+      margin-bottom: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: #fff;
+      border-bottom: 1px solid #e0c3fc;
+      padding: 12px 0;
+    }
+    nav a {
+      color: #6d3fcf;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1em;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #b35c1e;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 10px 40px 10px;
+      background: #fff;
+    }
+    .producto-card {
+      background: #fcfbfd;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #eee;
+      padding: 22px;
+      max-width: 320px;
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+    .producto-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px #d6c3fc;
+    }
+    .producto-card img {
+      width: 120px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    .producto-card h3 {
+      margin-top: 0;
+      font-size: 1.2em;
+      color: #6d3fcf;
+    }
+    .producto-card p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .producto-card .precio {
+      font-size: 1.1em;
+      color: #2e2e2e;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .producto-card button {
+      background: #6d3fcf;
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .producto-card button:hover {
+      background: #b35c1e;
+    }
+    .beneficios {
+      background: linear-gradient(90deg, #f9b4b4 0%, #fff6b7 100%);
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .beneficios h2 {
+      margin-top: 0;
+      color: #b35c1e;
+    }
+    .beneficios-lista {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    .beneficio {
+      max-width: 260px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 16px #f2d6c3;
+      color: #633a2f;
+    }
+    .testimonios {
+      padding: 60px 10px 40px 10px;
+      background: #f6f0fa;
+      text-align: center;
+    }
+    .testimonios h2 {
+      margin-top: 0;
+      color: #714ecc;
+    }
+    .testimonios-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .testimonio {
+      max-width: 320px;
+      padding: 22px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 3px 12px #e3d6fa;
+      font-style: italic;
+      color: #444;
+    }
+    .testimonio .autor {
+      margin-top: 18px;
+      font-weight: bold;
+      color: #714ecc;
+      font-style: normal;
+    }
+    .contacto-section {
+      background: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .contacto-section h2 {
+      color: #6d3fcf;
+      margin-top: 0;
+    }
+    .contacto-form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contacto-form input, .contacto-form textarea {
+      padding: 10px;
+      border: 1px solid #e0c3fc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    .contacto-form button {
+      background: #6d3fcf;
+      color: #fff;
+      border: none;
+      padding: 12px 0;
+      border-radius: 6px;
+      font-size: 1.05em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contacto-form button:hover {
+      background: #b35c1e;
+    }
+    .redes-sociales {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .redes-sociales a {
+      display: inline-block;
+      margin: 0 12px;
+      font-size: 2em;
+      color: #6d3fcf;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .redes-sociales a:hover {
+      color: #b35c1e;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 900px) {
+      .productos, .beneficios-lista, .testimonios-lista {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+  <!-- Iconos redes sociales (FontAwesome CDN) -->
+  <script src="https://kit.fontawesome.com/0a2e8e2c3c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Perfumería Exclusiva</h1>
+    <p>Descubre fragancias únicas, inspiradas en la elegancia y sofisticación.<br>Tu aroma, tu sello personal.</p>
+  </header>
+  <nav>
+    <a href="#productos">Productos</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section class="productos" id="productos">
+    <div class="producto-card">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Perfume 1">
+      <h3>Essence Divine</h3>
+      <p>Una fragancia floral con notas de jazmín, rosa y un toque de vainilla.</p>
+      <div class="precio">$99.00</div>
+      <button onclick="alert('Añadido al carrito: Essence Divine')">Añadir al carrito</button>
+    </div>
+    <div class="producto-card">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Perfume 2">
+      <h3>Oud Imperial</h3>
+      <p>Exótico y seductor, con oud, ámbar y especias orientales.</p>
+      <div class="precio">$120.00</div>
+      <button onclick="alert('Añadido al carrito: Oud Imperial')">Añadir al carrito</button>
+    </div>
+    <div class="producto-card">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Perfume 3">
+      <h3>Citrus Lumière</h3>
+      <p>Refrescante mezcla de cítricos, bergamota y almizcle blanco.</p>
+      <div class="precio">$89.00</div>
+      <button onclick="alert('Añadido al carrito: Citrus Lumière')">Añadir al carrito</button>
+    </div>
+  </section>
+
+  <section class="beneficios" id="beneficios">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="beneficios-lista">
+      <div class="beneficio">
+        <strong>Ingredientes Premium</strong>
+        <p>Solo esencias naturales y extractos de alta calidad.</p>
+      </div>
+      <div class="beneficio">
+        <strong>Fragancias Únicas</strong>
+        <p>Colección exclusiva diseñada por perfumistas reconocidos.</p>
+      </div>
+      <div class="beneficio">
+        <strong>Envío Internacional</strong>
+        <p>Llegamos a todo el mundo, rápido y seguro.</p>
+      </div>
+      <div class="beneficio">
+        <strong>Atención Personalizada</strong>
+        <p>Te asesoramos para encontrar tu fragancia ideal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonios" id="testimonios">
+    <h2>Testimonios</h2>
+    <div class="testimonios-lista">
+      <div class="testimonio">
+        "Nunca había recibido tantos cumplidos por mi aroma. ¡Simplemente espectacular!"
+        <div class="autor">— Carla M.</div>
+      </div>
+      <div class="testimonio">
+        "La calidad se nota desde el primer instante. Entrega rápida y presentación de lujo."
+        <div class="autor">— Luis F.</div>
+      </div>
+      <div class="testimonio">
+        "Mi fragancia favorita, dura todo el día y es realmente única."
+        <div class="autor">— Andrea G.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto-section" id="contacto">
+    <h2>Contacto</h2>
+    <form class="contacto-form" onsubmit="event.preventDefault();alert('¡Gracias por contactarnos! Pronto te responderemos.'); this.reset();">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="redes-sociales">
+      <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/1234567890" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Perfumería Exclusiva. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
